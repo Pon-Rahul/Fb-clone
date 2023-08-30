@@ -34,9 +34,15 @@ const Login = () => {
         setLogin(true);
     }
 
+    const clickloginHandler = (e) => {
+        if (e.keyCode === 13){
+          loginpage();
+        }
+     }
+
     return (
         <div className="bg">
-            <div className="rectangle">
+            <div className="rectangle" onKeyDown={(e) => clickloginHandler(e)}>
                 <h1 className="login">Log in</h1>
                 <form>
                     <div>

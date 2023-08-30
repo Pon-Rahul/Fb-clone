@@ -66,6 +66,11 @@ const App = () => {
     setCmt(cmt)
   }
 
+const handleKeyDown = (e,index) =>{
+  if (e.keyCode === 13) {
+    clickcmtHandler(index);
+   }
+}
   const deleteHandler = (index, i) => {
     const deleteCommentCopy = [...postdata]
     deleteCommentCopy[index]?.comment.splice(i, 1)
@@ -123,11 +128,15 @@ const App = () => {
 
   const postHandler = () => {
     const pushdata = [...postdata]
-    pushdata.push(post)
+    pushdata.unshift(post)
     setPostData(pushdata)
     navigate(-1)
   }
-
+ const clickPostHandler = (e) => {
+    if (e.keyCode === 13){
+      postHandler();
+    }
+ }
   return (
     <Routes>
       <Route path='' element={<Login />}></Route>
@@ -144,6 +153,7 @@ const App = () => {
         clickcmt={clickcmtHandler}
         deletebox={deleteboxHandler}
         editbox={editboxHandler}
+        entercomment = {handleKeyDown}
       />}></Route>
       <Route path='commentsection/:index' element={<CommentSection
         data={postdata}
@@ -156,6 +166,7 @@ const App = () => {
         commenthandle={hardCodeCommentHandler}
         commentvalue={hardCodeComment}
         postclick={postHandler}
+        clickhandle = {clickPostHandler}
       />}></Route>
     </Routes>
   );
