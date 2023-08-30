@@ -69,9 +69,15 @@ const ForgetPasswordQues = () => {
             setFourthQues("")
         }
     }
+
+    const clickForgetPasswordQuestions = (e) => {
+        if (e.keyCode === 13){
+          nextStep();
+        }
+     }
     return (
 
-        <div className="reqtangle">
+        <div className="reqtangle" onKeyDown={(e) => clickForgetPasswordQuestions(e)}>
             <h1 className="head">Forget password questions</h1>
             <p className="diss">Answer all the questions to reset the password</p>
             <hr />

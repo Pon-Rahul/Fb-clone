@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const PostFeed = ({ data, like, eventcomment, clickcmt, cmt , deletebox ,editbox}) => {
+const PostFeed = ({ data, like, eventcomment, clickcmt, cmt , deletebox ,editbox , entercomment}) => {
    const navigate = useNavigate()
 
 
@@ -33,8 +33,8 @@ const PostFeed = ({ data, like, eventcomment, clickcmt, cmt , deletebox ,editbox
                <span className="noofcomments">{data[i].comment.length}</span>
             </div>
             <hr />
-            <div>
-               <input placeholder="Add a comment" type="text" className="cmdbox" value={cmt[i]} onChange={(e)=>eventcomment(e,i)} />
+            <div onKeyDown={(e) => entercomment(e,i)}>
+               <input placeholder="Add a comment"  type="text" className="cmdbox" value={cmt[i]} onChange={(e)=>eventcomment(e,i)} />
                <span><button className="cmtbtn" onClick={() => clickcmt(i)}>Comment</button></span>
             </div>
             {data[i].comment.length > 0 && <CommentBox 

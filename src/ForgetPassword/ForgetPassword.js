@@ -37,16 +37,29 @@ const ForgetPassword = () => {
            setEmail("")
         }
     }
+
+    const clickEmail = (e) => {
+        if (e.keyCode === 13){
+          next();
+        }
+     }
+   
     return (
         <>
         <button className="back" onClick={() => navigate(-1)}>Back</button>
-        <div className="outline">
-            <h1 className="enter">Enter e-mail</h1>
+        <div className="border">
+        <div className="outline" onKeyDown={(e) => clickEmail(e)}>
+            <div className="headborder">
+            <h1 className="enteremail">Enter e-mail</h1>
+            </div>
+            <div className="borderinput">
             <EmptyBox click={nextPage} mail={email} empty={emptyemail}/>
             <input className="passbox" type="text" onChange={emailHandler} />
-            <div>
+            </div>
+            <div className="buttonborder">
                 <button className="next" onClick={next}>Next</button>
             </div>
+        </div>
         </div>
         </>
     )

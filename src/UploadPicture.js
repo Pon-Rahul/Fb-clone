@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
- const UploadPicture = ({ handleFileChange , file , commenthandle , commentvalue , postclick}) =>{
+ const UploadPicture = ({ handleFileChange , file , commenthandle , commentvalue , postclick , clickhandle}) =>{
    
    const inputRef = useRef(null);
 
@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
     return(
       <>
       <button className="postpicture" onClick={() => navigate(-1)}>Back</button>
-    <div className="postbox">
+    <div className="postbox" onKeyDown={(e) => clickhandle(e)}>
       <input type="text" placeholder = "Write a discription" className="description" value={commentvalue} onChange={commenthandle}></input>
        <button className="uploadbutton" onClick={uploadHandler}>Upload Picture</button>
        <input

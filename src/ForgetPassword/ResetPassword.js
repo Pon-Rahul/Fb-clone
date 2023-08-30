@@ -48,8 +48,13 @@ const ResetPassword = () => {
         }
     
     }
+    const clickresetPassword = (e) => {
+        if (e.keyCode === 13){
+          reset();
+        }
+     }
     return (
-        <div className="box">
+        <div className="box" onKeyDown={(e) => clickresetPassword(e)}>
             <h1 className="heading">Reset password</h1>
             <hr />
             <PassWordValidater

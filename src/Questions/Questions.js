@@ -57,8 +57,13 @@ const Questions = (props) => {
         props.onAccountData(recoveryquestions);
     }
 
+    const clickPasswordQuestions = (e) => {
+        if (e.keyCode === 13){
+          quesHandler();
+        }
+     }
     return (
-        <div className="reqtangle">
+        <div className="reqtangle" onKeyDown={(e) => {clickPasswordQuestions(e)}}>
             <h1 className="head">Forget password questions</h1>
             <p className="dis">Password-recovery questions you should be answered, if in case you forgot your password it helps to retrieve your password</p>
             <hr />

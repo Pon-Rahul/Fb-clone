@@ -7,15 +7,7 @@
     border-radius: 10px;
     background-color: rgb(250, 250, 250);
 }
-.postbox {
-    width: 450px;
-    height: 525px;
-    border: 1px solid darkgray;
-    margin-top: 1%;
-    margin-left: 35%;
-    border-radius: 10px;
-    background-color: rgb(250, 250, 250);
-}
+
 
 .picture {
     width: 50px;
@@ -40,13 +32,7 @@
     margin-top: 3%;
 }
 
-.postpic {
-    width: 430px;
-    height: 250px;
-    margin-left: 2.5%;
-    margin-top: 2%;
-    border-color: transparent;
-}
+
 
 .like {
     margin-left: 22%;
@@ -247,6 +233,29 @@
     touch-action: manipulation;
 }
 
+/* uploadpicture */
+
+.postbox {
+    width: 450px;
+    height: 525px;
+    border: 1px solid darkgray;
+    margin-top: 1%;
+    margin-left: 35%;
+    border-radius: 10px;
+    background-color: rgb(250, 250, 250);
+}
+
+.description {
+    margin-top: 15%;
+    margin-left: 4%;
+    margin-bottom: 2%;
+    width: 90%;
+    height: 25px;
+    padding-bottom: 5%;
+    background-color: rgb(250, 250, 250);
+    border-color: transparent;
+}
+
 .uploadbutton {
     margin-top: 3%;
     margin-left: 30%;
@@ -263,10 +272,15 @@
     font-size: .9em;
     padding: 10px 10px;
     text-align: center;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
     cursor: pointer;
+}
+
+.postpic {
+    width: 430px;
+    height: 250px;
+    margin-left: 2.5%;
+    margin-top: 2%;
+    border-color: transparent;
 }
 
 .postbtn{
@@ -290,16 +304,7 @@
     touch-action: manipulation;
     cursor: pointer;
 }
-.description {
-    margin-top: 15%;
-    margin-left: 4%;
-    margin-bottom: 2%;
-    width: 90%;
-    height: 25px;
-    padding-bottom: 5%;
-    background-color: rgb(250, 250, 250);
-    border-color: transparent;
-}
+
 
 @media (max-width : 1024px){
    .rectbox{
@@ -308,7 +313,7 @@
    .cmtbox{
     margin-top: 2%;
    }
-}
+} 
 
 @media (max-width : 768px){
     .rectbox{
